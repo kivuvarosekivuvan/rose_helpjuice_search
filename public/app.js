@@ -97,7 +97,6 @@ function loadTrends() {
     .then(data => {
       loader.classList.add('hidden');
       popularTerms = Object.keys(data);
-
       if (popularTerms.length === 0) {
         emptyState.classList.remove('hidden');
         return;
