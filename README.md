@@ -10,6 +10,9 @@ A tiny Rails 8 & vanilla‑JS app that tracks **completed**, real‑time searc
 ---  
 &nbsp;  
 <br><br>
+# Live Demo
+- Deployed https://rose-helpjuice-search-823599067cd0.herokuapp.com/
+<br><br>
 
 ## 🎯 What This Does
 
