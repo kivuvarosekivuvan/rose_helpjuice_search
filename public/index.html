@@ -2,27 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Search & Trends</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Search Analytics</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="container">
+    <header>
+      <h1>🔍 Search Analytics</h1>
+      <button id="theme-toggle" aria-label="Toggle dark mode">🌓</button>
+      <p class="subtitle">Type and press Enter to log your search.</p>
+    </header>
 
-  <h1>🔍 Search</h1>
-  <form id="search-form">
-    <input
-      type="text"
-      id="search-input"
-      name="query"
-      placeholder="Type and press Enter…"
-      autocomplete="off"
-      required
-    />
-  </form>
+    <section class="search-box">
+      <form id="search-form" autocomplete="off">
+        <div class="typeahead">
+          <input
+            type="text"
+            id="search-input"
+            name="query"
+            placeholder="Type and press Enter…"
+            required
+          />
+          <ul id="suggestions" class="suggestions hidden"></ul>
+        </div>
+      </form>
+    </section>
 
-  <h2>📈 Top Searches</h2>
-  <ul id="trends-list"></ul>
+    <section class="trends">
+      <h2>📈 Top Searches</h2>
 
+      <!-- spinner -->
+      <div id="loader" class="loader hidden"></div>
+
+      <!-- empty state -->
+      <div id="empty" class="empty hidden">
+        No searches yet. Start typing above to see trends!
+      </div>
+
+      <ul id="trends-list" class="hidden"></ul>
+
+      <div class="chart-container">
+        <canvas id="trends-chart"></canvas>
+      </div>
+    </section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
