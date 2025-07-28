@@ -14,12 +14,16 @@ test:
 production:
   primary:
     <<: *default
-    url: <%= ENV['DATABASE_URL'] %>
+    url: <%= ENV["DATABASE_URL"] %>
 
-  cable:
+  cache:
     <<: *default
-    url: <%= ENV['DATABASE_URL'] %>
+    url: <%= ENV["DATABASE_URL"] %>
 
   queue:
     <<: *default
-    url: <%= ENV['DATABASE_URL'] %>
+    url: <%= ENV["DATABASE_URL"] %>
+
+  cable:
+    <<: *default
+    url: <%= ENV["DATABASE_URL"] %>
