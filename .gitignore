@@ -1,0 +1,55 @@
+### Ruby ###
+*.gem
+*.rbc
+/.bundle
+.byebug_history
+
+### Rails ###
+/log/*
+/tmp/*
+/storage/*
+!/storage/.keep
+/public/system
+/public/uploads
+/config/master.key
+/config/credentials.yml.enc
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Legacy Rails script folder (using RSpec instead):
+/script/
+
+# Built‑in test folder (using spec/):
+/test/
+
+### Node ###
+/node_modules/
+/yarn-error.log
+/pnpm-debug.log
+
+### Vendor (unless you explicitly check in assets here) ###
+/vendor/
+/vendor/*
+
+### Kamal deploy hooks ###
+/.kamal/
+
+### Editor & OS ###
+*.swp
+*~
+.project
+.idea/
+.vscode/
+.DS_Store
+
+### Coverage reports ###
+/coverage/
+/*.lcov
+
+### Keep these empty dirs ###
+!/log/.keep
+!/tmp/.keep
+!/storage/.keep
+
+
+
