@@ -9,6 +9,7 @@ const themeToggle = document.getElementById('theme-toggle');
 let trendsChart    = null;
 let popularTerms   = [];
 let typeaheadTimer = null;
+let logTimer       = null;
 
 function applyTheme(isDark) {
   document.body.classList.toggle('dark', isDark);
@@ -33,34 +34,43 @@ function submitSearch(q) {
 
 input.addEventListener('input', () => {
   clearTimeout(typeaheadTimer);
-  const q = input.value.trim().toLowerCase();
-  if (!q) {
+  clearTimeout(logTimer);
+
+  const raw = input.value.trim();
+  const q   = raw.toLowerCase();
+
+  if (q) {
+    typeaheadTimer = setTimeout(() => {
+      const matches = popularTerms.filter(term =>
+        term.toLowerCase().startsWith(q)
+      );
+
+      suggestions.innerHTML = '';
+      if (matches.length) {
+        matches.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          li.addEventListener('click', () => {
+            suggestions.classList.add('hidden');
+            input.value = item;
+            submitSearch(item);
+          });
+          suggestions.appendChild(li);
+        });
+        suggestions.classList.remove('hidden');
+      } else {
+        suggestions.classList.add('hidden');
+      }
+    }, 150);
+  } else {
     suggestions.classList.add('hidden');
-    return;
   }
 
-  typeaheadTimer = setTimeout(() => {
-    const matches = popularTerms.filter(term =>
-      term.toLowerCase().startsWith(q)
-    );
-
-    suggestions.innerHTML = '';
-    if (matches.length === 0) {
-      suggestions.classList.add('hidden');
-    } else {
-      matches.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = item;
-        li.addEventListener('click', () => {
-          suggestions.classList.add('hidden');
-          input.value = item;
-          submitSearch(item);
-        });
-        suggestions.appendChild(li);
-      });
-      suggestions.classList.remove('hidden');
-    }
-  }, 150);
+  if (raw) {
+    logTimer = setTimeout(() => {
+      submitSearch(raw);
+    }, 750);
+  }
 });
 
 input.addEventListener('blur', () => {
@@ -69,6 +79,7 @@ input.addEventListener('blur', () => {
 
 form.addEventListener('submit', e => {
   e.preventDefault();
+  clearTimeout(logTimer);
   suggestions.classList.add('hidden');
   const q = input.value.trim();
   if (!q) return;
