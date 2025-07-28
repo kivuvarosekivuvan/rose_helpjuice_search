@@ -1,0 +1,28 @@
+body {
+  font-family: sans-serif;
+  margin: 2rem;
+}
+
+input {
+  padding: 0.5rem;
+  width: 300px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 0.25rem 0;
+}
+
+.count {
+  font-weight: bold;
+  margin-left: 0.25rem;
+}
+
+.percent {
+  color: #666;
+  margin-left: 0.5rem;
+}

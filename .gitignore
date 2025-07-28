@@ -1,0 +1,43 @@
+### Ruby ###
+*.gem
+*.rbc
+/.bundle
+/log/*
+/tmp/*
+/vendor/bundle
+/vendor/ruby
+.byebug_history
+
+### Rails ###
+/public/system
+/public/uploads
+/storage/*
+!/storage/.keep
+/config/master.key
+/config/credentials.yml.enc
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+### Node ###
+node_modules/
+/yarn-error.log
+/pnpm-debug.log
+
+### Kamal (ignore deploy hooks if not needed) ###
+/.kamal/
+
+### Rails test dir (if you use RSpec) ###
+/test/
+
+### Editor ###
+*.swp
+*~
+.project
+.idea
+.vscode
+.DS_Store
+
+### Keep these empty dirs ###
+!/log/.keep
+!/tmp/.keep
+!/storage/.keep
