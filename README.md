@@ -3,8 +3,8 @@
 A tiny Rails 8 & vanilla‑JS app that tracks **completed**, real‑time searches and shows the top queries in both list and bar‑chart form. Whether you’re on **macOS**, **Linux**, or **Windows**, this guide will walk you through getting up and running—from cloning the repo to launching the backend, serving the frontend, and running tests. 
 <br><br>
 
-<img width="400" alt="Search Analytics Screenshot" src="public/assets/image1.png" />
-<img width="450" alt="Search Analytics Screenshot" src="public/assets/image2.png" />
+<img width="800" alt="Search Analytics Screenshot" src="public/assets/image1.png" />
+<img width="800" alt="Search Analytics Screenshot" src="public/assets/image2.png" />
 
 
 ---  
