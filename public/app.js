@@ -31,7 +31,6 @@ function submitSearch(q) {
   })
   .catch(console.error);
 }
-
 input.addEventListener('input', () => {
   clearTimeout(typeaheadTimer);
   clearTimeout(logTimer);
